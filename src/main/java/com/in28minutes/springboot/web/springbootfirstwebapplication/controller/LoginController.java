@@ -31,6 +31,7 @@ public class LoginController {
 			@RequestParam String name,
 			@RequestParam String password,
 			ModelMap model) {
+		
 		boolean isValidUser = service.validateUser(name, password);
 		
 		if(!isValidUser) {
