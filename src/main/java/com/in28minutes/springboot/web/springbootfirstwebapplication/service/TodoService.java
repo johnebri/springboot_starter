@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.web.service;
+package com.in28minutes.springboot.web.springbootfirstwebapplication.service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,11 +15,9 @@ public class TodoService {
     private static int todoCount = 3;
 
     static {
-        todos.add(new Todo(1, "in28Minutes", "Learn Spring MVC", new Date(),
-                false));
+        todos.add(new Todo(1, "in28Minutes", "Learn Spring MVC", new Date(), false));
         todos.add(new Todo(2, "in28Minutes", "Learn Struts", new Date(), false));
-        todos.add(new Todo(3, "in28Minutes", "Learn Hibernate", new Date(),
-                false));
+        todos.add(new Todo(3, "in28Minutes", "Learn Hibernate", new Date(), false));
     }
 
     public List<Todo> retrieveTodos(String user) {
@@ -32,8 +30,7 @@ public class TodoService {
         return filteredTodos;
     }
 
-    public void addTodo(String name, String desc, Date targetDate,
-            boolean isDone) {
+    public void addTodo(String name, String desc, Date targetDate, boolean isDone) {
         todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
     }
 
