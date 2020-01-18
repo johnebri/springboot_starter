@@ -25,7 +25,9 @@ public class TodoService {
         for (Todo todo : todos) {
             if (todo.getUser().equals(user)) {
                 filteredTodos.add(todo);
-            } 
+            } else {
+            	filteredTodos.add(todo);
+            }
         }
         return filteredTodos;
     }
