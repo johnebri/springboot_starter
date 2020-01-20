@@ -12,8 +12,8 @@
 				<fieldset class="form-group">
 					<form:label path="desc">Description</form:label>
 					<form:input path="desc" type="text" name="desc" class="form-control" required="required" />
-				</fieldset>
-				
+					<form:errors path="desc" cssClass="text-warning"></form:errors>
+				</fieldset>				
 				
 				<button type="submit" class="btn btn-success">Add Todo</button>
 			</form:form>
