@@ -1,6 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <html>
 	<head>
 		<title>Todo's for ${name} </title>
@@ -21,6 +23,13 @@
 				</tr>
 			</thead>
 			<tbody>
+			
+				<c:if test="${todos.size() == 0 }">   
+					<tr>
+						<td colspan="5">There are no todos to display</td>
+					</tr>
+				</c:if>
+				
 				<c:forEach items="${todos}" var="todo">
 					<tr>
 						<td>${todo.desc}</td>
