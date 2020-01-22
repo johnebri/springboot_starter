@@ -1,8 +1,7 @@
-<html>
-	<head>
-		<title>First Web App</title>
-	</head>
-	<body>
+<%@ include file="common/header.jspf" %>
+<%@ include file="common/navigation.jspf" %>
+
+	<div class="container">
 		<p style="color:red;">${errorMessage}</p>
 		<form method="post">
 			Name : <input type="text" name="name" />
@@ -13,5 +12,6 @@
 		</form>
 		<%-- <p>My First JSP! Welcome ${name}</p>
 		<h3>I work at ${company}</h3> --%>
-	</body>
-</html>
+	</div>
+	
+<%@ include file="common/footer.jspf" %>
