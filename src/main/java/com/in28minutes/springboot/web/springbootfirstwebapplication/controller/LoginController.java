@@ -20,15 +20,15 @@ public class LoginController {
 	
 	// LoginService service = new LoginService(); // without dependency injection
 	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	// public String loginMessage(@RequestParam String name, @RequestParam String company, ModelMap model) {
-	public String showLoginPage() {
-//		model.put("name", name);
+	public String showLoginPage(ModelMap model) {
+		model.put("name", "in28Minutes");
 //		model.put("company", company);
-		return "login";
+		return "welcome";
 	}
 	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
+/*	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String showWelcomePage(
 			@RequestParam String name,
 			@RequestParam String password,
@@ -44,6 +44,6 @@ public class LoginController {
 		model.put("name", name);
 		model.put("password", password);
 		return "welcome";
-	}
+	}*/
 
 }
