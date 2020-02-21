@@ -1,10 +1,17 @@
-package com.in28minutes.springboot.web.model;
+package com.in28minutes.springboot.web.springbootfirstwebapplication.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
+@Entity
 public class Todo {
+	
+	@Id
+	@GeneratedValue
     private int id;
     private String user;
     
