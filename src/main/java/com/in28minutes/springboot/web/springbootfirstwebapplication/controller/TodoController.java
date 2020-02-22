@@ -68,7 +68,7 @@ public class TodoController {
 	
 	@RequestMapping(value="/add-todo", method=RequestMethod.GET)
 	public String showAddTodo(ModelMap model) {
-		model.addAttribute("todo", new Todo(0, getLoggedInUserName(model), "", new Date(), false));
+		model.addAttribute("todo", new Todo(1, getLoggedInUserName(model), "Default Todo", new Date(), false));
 		return "todo";
 	}
 	
@@ -78,8 +78,15 @@ public class TodoController {
 			return "todo";
 		}
 		
-		todo.setUser(getLoggedInUserName(model));
-		repository.save(todo);
+		try {
+			todo.setUser(getLoggedInUserName(model));
+			// todo.setDone(0);
+			repository.save(todo);
+		} catch(Exception ex) {
+			System.out.println("The exception is ===> ===> " + ex.getMessage());
+		}
+		
+		
 		//service.addTodo(getLoggedInUserName(model), todo.getDesc(), todo.getTargetDate(), false);
 		model.clear();
 		return "redirect:/list-todos";
@@ -116,7 +123,5 @@ public class TodoController {
 		
 		return "redirect:/list-todos";
 	}
-	
-
 
 }

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
@@ -11,7 +12,8 @@ import javax.validation.constraints.Size;
 public class Todo {
 	
 	@Id
-	@GeneratedValue
+	// @GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String user;
     
